@@ -4,6 +4,14 @@ import re
 import os
 from docx import Document
 
+import uvicorn
+
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 7860))  # 7860 is default for Gradio, Render may override
+    uvicorn.run("lexidraft_integration:lexidraft_ui", host="0.0.0.0", port=port)
+
+
 # ========== API Configuration ==========
 API_KEY = "AIzaSyALyNrInhxAQ9kbr8XbxpXiA6gDCsQUYXc"
 ENDPOINT = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={API_KEY}"

@@ -1,1 +1,1 @@
-web: python lexidraft_integration.py
+web: python main.py
